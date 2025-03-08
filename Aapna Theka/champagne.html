@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Champagne | Aapna Theka</title>
+    <!-- <link rel="stylesheet" href="champagne.css"> -->
+     <style>
+        /* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and background */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fafafa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.navbar .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin: 0 1.5rem;
+}
+
+.navbar .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links li a:hover {
+    color: #ff9800;
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    background-color: #ff9800;
+    color: white;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+/* History Section */
+#history {
+    padding: 3rem 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+#history h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#history p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+}
+
+/* Products Section */
+#products {
+    padding: 4rem 2rem;
+    background-color: #f4f4f4;
+}
+
+#products h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* 2-Column Layout for Products */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.product-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 48%; /* Two products per row */
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+}
+
+.product-image {
+    width: 40%; /* Image occupies 40% of the product card */
+    height: 300px;
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+}
+
+.product-details {
+    padding: 1.5rem;
+    width: 60%; /* Text and button section occupy 60% */
+}
+
+.product-details h5 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.product-details p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.product-details .quantity {
+    margin-bottom: 1rem;
+}
+
+.product-details .quantity input {
+    width: 50px;
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.product-details .rate p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.add-to-cart {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #e68900;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-item {
+        width: 48%;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-item {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .product-details h5 {
+        font-size: 1.3rem;
+    }
+}
+
+     </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Aapna Theka</a>
+            <ul class="nav-links">
+                <li><a href="/homepage">Home</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#products">Products</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Champagne</h1>
+    </header>
+
+    <!-- History Section -->
+    <section id="history">
+        <h2>History</h2>
+        <p>
+            Champagne, the quintessential sparkling wine, boasts a regal history that begins in the Champagne region of France. The first documented sparkling wine produced in this area was during the early 16th century. By the late 17th century, the famous monk Dom Pérignon played a significant role in refining the méthode champenoise, a traditional method of producing sparkling wine.
+        </p>
+        <p>
+            The drink gained popularity among European aristocracy, becoming synonymous with luxury and celebration. The 18th and 19th centuries saw the establishment of prestigious champagne houses, such as Moët & Chandon, Veuve Clicquot, and Pommery.
+        </p>
+        <p>
+            Technological advances in glassmaking and the invention of the cork helped preserve champagne's effervescence, further boosting its global appeal. By the late 19th century, champagne was being exported worldwide, symbolizing elegance and festivity.
+        </p>
+        <p>
+            Today, champagne remains a celebrated icon of luxury and special occasions. Strict production laws in the Champagne region ensure its quality and exclusivity, maintaining its status as a premier sparkling wine.
+        </p>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <h2>Products</h2>
+        <div class="product-container">
+            <!-- Product 1 -->
+            <article class="product-item">
+                <div class="product-image">
+                    <img src="billecartsalmon.jpeg" alt="Billecart Salmon">
+                </div>
+                <div class="product-details">
+                    <h5>Billecart Salmon</h5>
+                    <div class="quantity">
+                        <label for="quantity1">Quantity:</label>
+                        <input type="number" id="quantity1" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $10</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </article>
+
+            <!-- Product 2 -->
+            <article class="product-item">
+                <div class="product-image">
+                    <img src="jacquart.jpeg" alt="Jacquart">
+                </div>
+                <div class="product-details">
+                    <h5>Jacquart</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </article>
+            <article class="product-item">
+                <div class="product-image">
+                    <img src="laurentperrier.jpeg" alt="Laurent Perrier">
+                </div>
+                <div class="product-details">
+                    <h5>Laurent Perrier</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </article>
+            <article class="product-item">
+                <div class="product-image">
+                    <img src="jew.jpeg" alt="Jew">
+                </div>
+                <div class="product-details">
+                    <h5>Jew</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </article>
+            <article class="product-item">
+                <div class="product-image">
+                    <img src="moetandchandon.jpeg" alt="Moet and Chandon">
+                </div>
+                <div class="product-details">
+                    <h5>Moet and Chandont</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </article>
+            <article class="product-item">
+                <div class="product-image">
+                    <img src="Vietti.jpeg" alt="Vietti">
+                </div>
+                <div class="product-details">
+                    <h5>Vietti</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </article>
+            <article class="product-item">
+                <div class="product-image">
+                    <img src="villasandi.jpeg" alt="Villasandi">
+                </div>
+                <div class="product-details">
+                    <h5>Villasandi</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+        </div>
+    </section>
+</body>
+</html>

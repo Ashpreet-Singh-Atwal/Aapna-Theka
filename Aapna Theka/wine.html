@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine</title>
+    <!-- <link rel="stylesheet" href="wine.css"> -->
+     <style>
+        /* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f5f0;
+    color: #333;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #800000; /* Wine-inspired color */
+    position: sticky;
+    top: 0;
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffd700; /* Gold hover effect */
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    background: linear-gradient(to right, #8b0000, #800000);
+    color: #fff;
+    padding: 0px;
+    margin-bottom: 0rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* History Section */
+#history {
+    padding: 2rem;
+    background-color: #fff7e6;
+    margin: 1rem auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#history h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #800000;
+}
+
+#history p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+/* Products Section */
+#products {
+    padding: 2rem;
+}
+
+#products h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #800000;
+    text-align: center;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.product-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-image img {
+    max-width: 100%;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
+}
+
+.product-details h5 {
+    font-size: 1.25rem;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+.quantity {
+    margin: 0.5rem 0;
+}
+
+.quantity label {
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.quantity input {
+    width: 50px;
+    text-align: center;
+    padding: 0.25rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.rate p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.add-to-cart {
+    background-color: #800000;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #a00000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+     </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Aapna Theka</a>
+            <ul class="nav-links">
+                <li><a href="/homepage">Home</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#products">Products</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Wine</h1>
+    </header>
+
+    <!-- History Section -->
+    <section id="history">
+        <h2>History</h2>
+        <p>
+            Wine, one of the oldest alcoholic beverages, traces its origins to around 6000 BCE in the regions of modern-day Georgia and Iran. Early winemaking involved fermenting wild grapes, and it soon became an integral part of religious rituals and social gatherings in ancient civilizations like Mesopotamia and Egypt. By 2000 BCE, the Phoenicians had begun trading wine across the Mediterranean, spreading viticulture to Greece and Italy.
+        </p>
+        <p>
+            In ancient Greece, wine was celebrated in festivals dedicated to Dionysus, the god of wine, and valued for its medicinal properties. The Romans further advanced winemaking, developing techniques like barrel aging and viticultural practices that laid the foundation for modern wine production. As the Roman Empire expanded, vineyards flourished across Europe, particularly in France, Spain, and Germany.
+        </p>
+        <p>
+            During the Middle Ages, the Catholic Church preserved and refined winemaking, as wine was essential for religious ceremonies. The Renaissance saw wine become a symbol of cultural sophistication, and global trade introduced European wines to the Americas and beyond. Today, wine is a global industry, deeply tied to culture, tradition, and innovation, embodying millennia of human craftsmanship.
+        </p>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <h2>Products</h2>
+        <div class="product-container">
+            <!-- Product 1 -->
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="twooceansshiraz.jpeg" alt="Two Oceans Shiraz">
+                </div>
+                <div class="product-details">
+                    <h5>Two Oceans Shiraz</h5>
+                    <div class="quantity">
+                        <label for="quantity1">Quantity:</label>
+                        <input type="number" id="quantity1" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $10</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="donnafugatasedarasicilia.jpeg" alt="Donnafugata Sedara Sicilia">
+                </div>
+                <div class="product-details">
+                    <h5>Donnafugata Sedara Sicilia</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="renierirossodimontalcinodoc.jpeg" alt="Renieri Rosso di MontalcinoDOC">
+                </div>
+                <div class="product-details">
+                    <h5>Renieri Rosso di MontalcinoDOC</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="pontingcloseofplaycabernetsauvignon.jpeg" alt="Ponting Close Of Play Cabernet Sauvignon">
+                </div>
+                <div class="product-details">
+                    <h5>Ponting Close Of Play Cabernet Sauvignon</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="pontingthepinnacleshiraz.jpeg" alt="Ponting The Pinnacle Shiraz">
+                </div>
+                <div class="product-details">
+                    <h5>Ponting The Pinnacle Shiraz</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="chapoutiermariusrouge.jpeg" alt="Chapoutier Marius Rouge">
+                </div>
+                <div class="product-details">
+                    <h5>Chapoutier Marius Rouge</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="chateaulaubesbordeaux.jpeg" alt="Chateau Laubes Bordeaux">
+                </div>
+                <div class="product-details">
+                    <h5>Chateau Laubes Bordeaux</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="izadicrianzatempranello.jpeg" alt="Izadi Crianza Tempranello">
+                </div>
+                <div class="product-details">
+                    <h5>Izadi Crianza Tempranello</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

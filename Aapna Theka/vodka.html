@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vodka</title>
+    <!-- <link rel="stylesheet" href="vodka.css"> -->
+     <style>
+        /* General Styles */
+body {
+    font-family: 'Georgia', serif; /* Elegant serif font for a distinct feel */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Light lavender-gray background */
+    color: #2c2c34; /* Dark text color */
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #800000; /* Deep burgundy */
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffcccb; /* Light pink hover effect */
+}
+
+/* Header Section */
+header {
+    background-color: #ffcccb; /* Light pink background */
+    color: #800000; /* Deep burgundy text */
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 4px solid #800000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    font-family: 'Palatino Linotype', serif;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Titles */
+h2 {
+    text-align: center;
+    color: #800000;
+    margin-left: 50%;
+    margin-top: 20px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ffcccb;
+    display: inline-block;
+    padding-bottom: 5px;
+    font-size: 1.8rem;
+    font-family: 'Georgia', serif;
+    transform: translateX(-50%);
+}
+
+/* Paragraph Styles */
+#history p {
+    max-width: 1000px;
+    margin: 0 auto 20px auto;
+    line-height: 1.8;
+    text-align: justify;
+    padding: 0 15px;
+    color: #2c2c34; /* Dark gray text */
+}
+
+/* Products Section */
+#products {
+    padding: 30px 0;
+    background-color: #ffe4e1; /* Light rose background */
+}
+
+/* Product Container */
+.product-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    padding: 0 15px;
+}
+
+/* Product Item Styles */
+.product-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 850px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    gap: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styles */
+.product-image img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid #800000; /* Matches the theme */
+}
+
+/* Product Details Styles */
+.product-details {
+    flex: 1;
+}
+
+.product-details h5 {
+    font-size: 1.6rem;
+    color: #800000; /* Deep burgundy text */
+    margin: 0 0 10px 0;
+}
+
+.quantity {
+    margin: 10px 0;
+}
+
+.quantity label {
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+.quantity input {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Rate Styles */
+.rate p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #555; /* Slightly lighter text */
+}
+
+/* Add to Cart Button */
+.add-to-cart {
+    background-color: #800000; /* Deep burgundy */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #b22222; /* Firebrick red for hover */
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .product-item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-image img {
+        width: 100px;
+    }
+
+    .add-to-cart {
+        width: 100%;
+    }
+}
+
+     </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Aapna Theka</a>
+            <ul class="nav-links">
+                <li><a href="/homepage">Home</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#products">Products</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Vodka</h1>
+    </header>
+
+    <!-- History Section -->
+    <section id="history">
+        <h2>History</h2>
+        <p>
+            Vodka, a globally cherished distilled spirit, has its roots in Eastern Europe, particularly in Russia and Poland, dating back to the 9th century. Initially produced for medicinal purposes, early vodka, or "gorzalka" in Poland, was also used in perfumery. Derived from the Slavic word "voda," meaning water, it became a staple in social and religious traditions by the 14th century. In the 16th century, Ivan the Terrible established a state monopoly on vodka production, formalizing its role in Russian society.
+        </p>
+        <p>
+            During the Industrial Revolution, distillation techniques improved, introducing methods like charcoal filtration for greater purity. By the 19th century, vodka spread globally, especially to the Americas and Western Europe. Its neutral flavor made it ideal for cocktails such as the Moscow Mule and Bloody Mary, contributing to its rise in the 20th century. Today, vodka is celebrated worldwide for its versatility and remains a symbol of tradition and hospitality in its Eastern European origins, embodying centuries of cultural and technological refinement.
+        </p>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <h2>Products</h2>
+        <div class="product-container">
+            <!-- Product 1 -->
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="absolutevodka.jpg" alt="Absolute Vodka">
+                </div>
+                <div class="product-details">
+                    <h5>Absolute Vodka</h5>
+                    <div class="quantity">
+                        <label for="quantity1">Quantity:</label>
+                        <input type="number" id="quantity1" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $10</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="BELUGA.jpg" alt="Beluga">
+                </div>
+                <div class="product-details">
+                    <h5>Beluga</h5>
+                    <div class="quantity">
+                        <label for="quantity1">Quantity:</label>
+                        <input type="number" id="quantity1" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $10</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="belvedere.jpg" alt="Belvedere">
+                </div>
+                <div class="product-details">
+                    <h5>Belvedere</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="belvedere-lake-bartezek.jpg" alt="Belvedere Lake Bartezek">
+                </div>
+                <div class="product-details">
+                    <h5>Belvedere Lake Bartezek</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="CIROC.jpg" alt="Ciroc">
+                </div>
+                <div class="product-details">
+                    <h5>Ciroc</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="GREYGOOSE.jpg" alt="Greygoose">
+                </div>
+                <div class="product-details">
+                    <h5>Greygoose</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="KETELONE.jpg" alt="Ketelone">
+                </div>
+                <div class="product-details">
+                    <h5>Ketelone</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="SKYYVODKA.jpg" alt="Skyyvodka">
+                </div>
+                <div class="product-details">
+                    <h5>Skyyvodka</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="SMIRNOFF.jpg" alt="Smirnoff">
+                </div>
+                <div class="product-details">
+                    <h5>Smirnoff</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="STOLICHNANYA.jpg" alt="Stolichnanya">
+                </div>
+                <div class="product-details">
+                    <h5>Stolichnanya</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

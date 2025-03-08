@@ -1,0 +1,340 @@
+/* Reset margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #333;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .navbar-brand {
+    color: #FFD700;
+    font-size: 40px;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Home Section */
+#home {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f4f4f4;
+}
+
+#home h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+#home h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#home p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.container3 {
+    margin-left: 30px;
+}
+
+/* Product Section */
+#products {
+    padding: 40px 20px;
+}
+
+
+/* Main Drinks Heading */
+#products h1 {
+    font-size: clamp(40px, 8vw, 60px); /* Responsive font size */
+    font-weight: bold;
+    color: #FFD700; /* Golden Yellow */
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    margin: 0 auto 50px auto; /* Center and add spacing */
+    max-width: 99%; /* Prevent heading from exceeding the screen */
+    perspective: 500px; /* Adds a 3D effect */
+    animation: floatEffect 3s ease-in-out infinite;
+    word-wrap: break-word; /* Ensures text wraps if needed */
+    line-height: 1.2; /* Better spacing between lines */
+  }
+  
+  /* Layered Shadow Effect */
+  #products h1::before {
+    content: "Drinks"; /* Shadow layer text */
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 0;
+    color: rgba(255, 215, 0, 0.6); /* Softer Golden Yellow */
+    z-index: -1;
+    transform: rotateX(15deg) skewX(10deg); /* 3D depth effect */
+    filter: blur(4px);
+  }
+  
+  /* Glowing Golden Border */
+  #products h1::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 3px solid rgba(255, 223, 0, 0.8); /* Bright Golden Yellow */
+    border-radius: 10px;
+    animation: glowPulse 2s infinite;
+    z-index: -2;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 223, 0, 0.8);
+  }
+  
+  /* Floating Animation */
+  @keyframes floatEffect {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Golden Glow Animation */
+  @keyframes glowPulse {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 223, 0, 0.8);
+    }
+    50% {
+      box-shadow: 0 0 25px rgba(255, 255, 0, 1), 0 0 40px rgba(255, 239, 0, 1);
+    }
+  }
+
+
+.container4 {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.product {
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.product.reverse {
+    padding-right: 30px;
+    justify-content: right;
+    align-items: center; /* Align items vertically in the center */
+    gap: 60px; /* Maintain spacing between description and image */
+}
+
+
+.product img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.description {
+    max-width: 800px;
+}
+
+.description h5 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.description p {
+    font-size: 1em;
+    color: #333;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .product {
+        flex-direction: column; /* Stack items vertically for smaller screens */
+    }
+
+    .product.reverse {
+        flex-direction: column; /* No need for reverse on mobile */
+    }
+
+    .product img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Style for the "Buy Now" button */
+.buy-now {
+    background-color: #FFD700; /* Gold color for the button */
+    color: #000; /* Black text */
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px; /* Space between the product description and button */
+  }
+  
+  .buy-now:hover {
+    background-color: #FF8C00; /* Darker gold color on hover */
+    transform: translateY(-2px); /* Slight upward movement on hover */
+  }
+  
+  .buy-now:active {
+    background-color: #e67e22; /* Slightly darker color when the button is clicked */
+    transform: translateY(1px); /* Slight downward movement on click */
+  }
+  
+  .buy-now:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px 2px rgba(255, 140, 0, 0.5); /* Glow effect on focus */
+  }
+  
+
+/* About Section */
+#about {
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+}
+
+#about h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+#about p {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.8;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #fff;
+    padding: 50px 20px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.right-section {
+    flex: 1;
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form .form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+form .form-row div {
+    width: 48%;
+}
+
+form label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #FFD700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #FFBF00;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    #category-section {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+    }
+
+    .navbar .nav-links {
+        display: block;
+        text-align: center;
+    }
+
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .left-section,
+    .right-section {
+        flex: 1 100%;
+        padding: 10px;
+    }
+}

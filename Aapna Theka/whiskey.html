@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiskey</title>
+    <!-- <link rel="stylesheet" href="whiskey.css"> -->
+     <style>
+        /* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 28px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #f39c12;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #f39c12;
+    color: #000;
+}
+
+/* Header Section */
+header {
+    background: linear-gradient(90deg, #f39c12, #e67e22);
+    color: #fff;
+    text-align: center;
+    padding: 20px 20px;
+}
+
+header h1 {
+    font-size: 60px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* History Section */
+#history {
+    background-color: #292929;
+    padding: 40px 20px;
+}
+
+#history h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #f39c12;
+}
+
+#history p {
+    max-width: 800px;
+    margin: 10px auto;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #bdbdbd;
+    text-align: justify;
+}
+
+/* Products Section */
+#products {
+    padding: 50px 20px;
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+#products h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #e74c3c;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Horizontal Scrollable Flex Container */
+.product-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+    scrollbar-width: thin;
+    scrollbar-color: #e74c3c transparent;
+}
+
+.product-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.product-container::-webkit-scrollbar-thumb {
+    background: #e74c3c;
+    border-radius: 5px;
+}
+
+.product-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.product-item {
+    min-width: 250px;
+    background: #292929;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.product-image img {
+    width: 100%;
+    height: 300px;
+    /* object-fit: cover; */
+    display: block;
+}
+
+.product-details {
+    padding: 15px;
+}
+
+.product-details h5 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #e74c3c;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.quantity {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #bbbbbb;
+}
+
+.quantity label {
+    margin-right: 8px;
+}
+
+.quantity input {
+    width: 60px;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #444;
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.rate p {
+    font-size: 16px;
+    color: #f1c40f;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.add-to-cart {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    text-transform: uppercase;
+}
+
+.add-to-cart:hover {
+    background-color: #c0392b;
+    transform: scale(1.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .product-item {
+        min-width: 200px;
+    }
+
+    .product-details h5 {
+        font-size: 16px;
+    }
+
+    .add-to-cart {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}
+
+     </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Aapna Theka</a>
+            <ul class="nav-links">
+                <li><a href="/homepage">Home</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="/tutorial">Tutorial</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Whiskey</h1>
+    </header>
+
+    <!-- History Section -->
+    <section id="history">
+        <h2>History</h2>
+        <p>
+            Whiskey, a spirit with a storied past, dates back over a thousand years. Its origins can be traced to ancient Mesopotamia, where the first distillation practices began. Irish monks brought the technique to Ireland around the 6th century, creating "uisce beatha," meaning "water of life." The practice crossed into Scotland by the 11th century, resulting in Scotch whisky.
+        </p>
+        <p>
+            By the 1600s, whiskey-making had spread across Europe and into the New World. American whiskey emerged, with bourbon becoming a distinct style by the late 18th century. Prohibition in the early 20th century severely impacted the industry, but it eventually rebounded.
+        </p>
+        <p>
+            Today, whiskey is enjoyed globally, with various styles and brands reflecting its diverse history. From Irish and Scotch to American and Canadian, whiskey remains a beloved and storied spirit, cherished by many.
+        </p>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <h2>Products</h2>
+        <div class="product-container">
+            <!-- Product 1 -->
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="SIGANTURE.jpeg" alt="Siganture">
+                </div>
+                <div class="product-details">
+                    <h5>Siganture</h5>
+                    <div class="quantity">
+                        <label for="quantity1">Quantity:</label>
+                        <input type="number" id="quantity1" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $10</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="antiqity.jpeg" alt="Antiqity">
+                </div>
+                <div class="product-details">
+                    <h5>Antiqity</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="blackandwhite.jpeg" alt="Black and White">
+                </div>
+                <div class="product-details">
+                    <h5>Black and White</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="blackdog.jpeg" alt="Black Dog">
+                </div>
+                <div class="product-details">
+                    <h5>Black Dog</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="bluelabel.jpeg" alt="Blue Label">
+                </div>
+                <div class="product-details">
+                    <h5>Blue Label</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="GLENDFIDDITCH15.jpeg" alt="Glendfidditch 15">
+                </div>
+                <div class="product-details">
+                    <h5>Glendfidditch 15</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="redlabel.jpeg" alt="Red Label">
+                </div>
+                <div class="product-details">
+                    <h5>Red Label</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="royalstag.jpeg" alt="Royal Stag">
+                </div>
+                <div class="product-details">
+                    <h5>Royal Stag</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="teachers.jpeg" alt="Teachers">
+                </div>
+                <div class="product-details">
+                    <h5>Teachers</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="vat69.jpeg" alt="VAT 69">
+                </div>
+                <div class="product-details">
+                    <h5>VAT 69</h5>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity" value="1" min="1">
+                    </div>
+                    <div class="rate">
+                        <p>Rate: $12</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
